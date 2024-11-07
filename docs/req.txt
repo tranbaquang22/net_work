@@ -1,0 +1,63 @@
+Bài tập 1: Phát triển Ứng dụng Mạng
+Mục tiêu:
+
+Xây dựng một ứng dụng đơn giản giống như torrent, 
+sử dụng giao thức được định nghĩa trong ngăn xếp giao thức TCP/IP.
+
+Tổng quan ứng dụng:
+
+Ứng dụng sẽ có một máy chủ trung tâm lưu trữ thông tin về các client đang kết nối và các mảnh (pieces) của tệp mà các client đang giữ.
+Giao thức Tracker: Các client sẽ thông báo cho máy chủ biết các tệp nào có trong kho lưu trữ cục bộ của họ mà 
+không thực sự truyền dữ liệu tệp lên máy chủ.
+Khi một client cần tải tệp không có trong kho lưu trữ cục bộ của mình, 
+nó sẽ gửi yêu cầu đến máy chủ để được chỉ dẫn tìm kiếm client khác có tệp đó.
+Ứng dụng yêu cầu mã client phải hỗ trợ đa luồng (multithreading) để có thể tải về nhiều tệp từ nhiều client cùng lúc.
+
+Các thành phần chính:
+Magnet Text: Chứa thông tin cần thiết để trỏ đến tệp metainfo trên cổng tracker.
+Tệp Metainfo: (tệp .torrent) chứa các chi tiết về torrent, bao gồm địa chỉ IP, độ dài mảnh (piece length) và số lượng mảnh.
+Pieces: Tệp được chia thành các mảnh có kích thước bằng nhau (thường là 512KB) để tải về hiệu quả.
+Files: Được chỉ định trong tệp Metainfo, quản lý cách ánh xạ các mảnh vào tệp là rất quan trọng để tránh lỗi.
+Giao thức HTTP của Tracker:
+Client sẽ kết nối với máy chủ tracker để đăng ký thông tin về các mảnh tệp mà nó có.
+Máy chủ tracker sẽ phản hồi với thông tin cần thiết để hỗ trợ chia sẻ tệp ngang hàng (peer-to-peer).
+
+
+
+
+Bài tập 2: Thiết kế và Mô phỏng Mạng cho Bệnh Viện Lớn Quan Trọng
+Mục tiêu:
+
+Thiết kế một sơ đồ mạng đầy đủ cho bệnh viện lớn, 
+đảm bảo các phòng ban có thể giao tiếp 
+và trao đổi dữ liệu một cách an toàn và hiệu quả.
+Nghiên cứu tình huống:
+Công ty CCC được giao nhiệm vụ thiết kế mạng cho một bệnh viện lớn, 
+gồm 2 tòa nhà chính (A và B), mỗi tòa có 5 tầng với 10 phòng chứa thiết bị y tế và máy tính.
+Trung tâm Dữ liệu: Được đặt trong phòng riêng để quản lý CNTT.
+Chi tiết cụ thể:
+600 máy trạm, 10 máy chủ, ít nhất 12 thiết bị mạng với yêu cầu bảo mật cao.
+Toàn bộ khu vực phải được phủ sóng không dây.
+Công nghệ mới: Mạng sẽ sử dụng các công nghệ tiên tiến như cáp quang và GigaEthernet.
+Kết nối WAN: Kết nối trang chính với 2 trang phụ bằng đường thuê bao, có thể dùng SD-WAN hoặc MPLS.
+Truy cập Internet: Sử dụng xDSL với cơ chế cân bằng tải.
+Phần mềm: Bệnh viện sử dụng kết hợp phần mềm có bản quyền và mã nguồn mở cho nhiều ứng dụng như hồ sơ bệnh nhân và đa phương tiện.
+Yêu cầu:
+Đảm bảo mở rộng, bảo mật cao (phát hiện phishing), sẵn sàng cao (HA), và hệ thống phải có khả năng chống chịu tốt.
+Cấu hình VPN: Đề xuất cho kết nối an toàn từ xa.
+Hệ thống giám sát camera và các nâng cấp khác để đảm bảo an ninh và tính ổn định.
+
+
+
+
+Bài 1 yêu cầu bạn lập trình một ứng dụng mạng giống như torrent, 
+trong đó cần viết mã (code) để quản lý kết nối client và truyền tải dữ liệu sử dụng giao thức TCP/IP. 
+Bài này liên quan đến việc xử lý giao tiếp mạng, 
+chia sẻ tệp ngang hàng (peer-to-peer), 
+và lập trình đa luồng để tải về đồng thời từ nhiều nguồn.
+
+Bài 2 yêu cầu bạn sử dụng Cisco Packet Tracer (hoặc một công cụ mô phỏng mạng khác) để thiết kế và mô phỏng một mạng cho bệnh viện lớn. Trong bài này, bạn sẽ phải tạo sơ đồ mạng, cấu hình các thiết bị mạng (như router, switch), và đảm bảo rằng mạng đáp ứng yêu cầu về bảo mật, hiệu suất, và tính sẵn sàng.
+
+
+Thư viện socket,
+https://docs.python.org/3.10/library/concurrency.html 

@@ -1,0 +1,46 @@
+1. Assignment 1: Develop a Network Application
+Objective:
+
+Create a simplified torrent-like application using a specified protocol within the TCP/IP protocol stack.
+Overview:
+
+The application will have a centralized server that keeps track of connected clients and stores information 
+about file pieces available on those clients.
+The Tracker Protocol: Clients notify the server about the files in their local repository 
+without transferring the actual file data.
+When a client requests a file not present in its local storage, 
+it sends a request to the server, which helps identify another client holding that file.
+The design requires the client code to be multithreaded to support simultaneous downloads from multiple peers.
+Key Components:
+
+Magnet Text: Contains essential information like a hash code pointing to a metainfo file on the tracker portal.
+Metainfo File: (.torrent file) Details the torrent, including the file location, piece length, and count.
+Pieces: The file is divided into equal-sized parts (commonly 512KB) for efficient downloading.
+Files: The files are mapped to pieces, and managing this mapping is critical for accuracy.
+Tracker HTTP Protocol:
+Clients contact the tracker to register information about their file pieces.
+The tracker provides responses based on specified parameters and requests, 
+helping facilitate peer-to-peer file sharing.
+2. Assignment 2: Network Design and Simulation for a Critical Large Hospital
+Objective:
+
+Design a comprehensive network topology for a large hospital, 
+covering different departments and ensuring efficient and secure data exchange.
+Case Study:
+
+The CCC Agency is tasked with designing a network for a large hospital with two main buildings (A and B), 
+each with 5 floors containing 10 rooms equipped with medical devices and computers.
+Data Center: Located in a separate room for IT management.
+Specifications:
+600 workstations, 10 servers, and at least 12 networking devices with a focus on security.
+Wireless coverage must be available throughout the site.
+New Technologies: The network will use advanced infrastructure technologies like fiber cabling and GigaEthernet.
+WAN Connection: The main site connects to two auxiliary sites via leased lines, 
+potentially using technologies like SD-WAN or MPLS.
+Internet Access: Utilizes xDSL connections with load balancing.
+Software: The hospital will use a combination of licensed and open-source software for various purposes, 
+including patient records and multimedia applications.
+Requirements:
+Must ensure scalability, high security (including phishing detection), high availability (HA), and system robustness.
+VPN Configuration: Proposed for secure remote access.
+Surveillance systems and other enhancements for comprehensive security and reliability.

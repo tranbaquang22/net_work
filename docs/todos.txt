@@ -1,0 +1,53 @@
+Bài 1:
+sử dụng thư viện concurrency, socket, threading, http.server 
+
+
+
+
+Bài 2:
+Bước 1: Phân tích yêu cầu và lập kế hoạch
+Phân tích chi tiết yêu cầu:
+
+Bệnh viện có 2 tòa nhà (A và B), mỗi tòa có 5 tầng với 10 phòng, được trang bị máy tính và thiết bị y tế.
+Trung tâm dữ liệu và các thiết bị IT khác được đặt trong phòng riêng.
+Mạng có 600 máy trạm, 10 máy chủ, 12 thiết bị mạng và yêu cầu an ninh cao.
+Cần phủ sóng không dây toàn bộ khu vực và kết nối các trang phụ bằng đường thuê bao.
+Sử dụng các công nghệ hiện đại như cáp quang, GigaEthernet và thiết lập VPN.
+Lập sơ đồ mạng:
+
+Chia các khu vực thành các mạng con (subnet) dựa trên sơ đồ VLAN cho từng phòng ban.
+Vẽ sơ đồ dự kiến về cách các tầng và tòa nhà sẽ kết nối với trung tâm dữ liệu.
+Bước 2: Bắt đầu cấu hình trong Cisco Packet Tracer
+Tạo sơ đồ mạng cơ bản:
+
+Kéo và thả các thiết bị mạng như router, switch, và access point vào không gian làm việc.
+Kết nối các tòa nhà A và B với nhau qua các switch chính và kết nối với trung tâm dữ liệu.
+Thiết lập các access point không dây để đảm bảo phủ sóng toàn bộ khu vực.
+Cấu hình các mạng con (subnet):
+
+Dựa vào sơ đồ VLAN, phân chia các phòng ban trong tòa nhà thành các mạng con riêng biệt.
+Cấu hình VLAN trên các switch để quản lý lưu lượng mạng nội bộ.
+Kết nối WAN với các trang phụ:
+
+Toàn bộ phần trên chỉ là viết config (ghi lại các command config từ đầu ra docs)
+
+Sử dụng router để cấu hình kết nối WAN đến các trang phụ bằng đường thuê bao (leased lines). 
+Cân nhắc sử dụng các công nghệ như SD-WAN hoặc MPLS nếu được yêu cầu.
+Bước 3: Cấu hình bảo mật và quản lý (cấu hình code hoặc trên UI)
+Cấu hình tường lửa (firewall) và các biện pháp bảo mật khác:
+
+Thiết lập firewall để bảo vệ mạng khỏi các mối đe dọa bên ngoài.
+Cấu hình các chính sách bảo mật, bao gồm phát hiện phishing và bảo mật truy cập dữ liệu.
+Cấu hình VPN cho kết nối từ xa:
+
+Tạo kết nối VPN site-to-site để nhân viên có thể kết nối an toàn từ xa.
+Đảm bảo rằng kết nối VPN có mã hóa dữ liệu để tăng cường an ninh.
+Bước 4: Kiểm tra và tối ưu hóa
+Kiểm tra kết nối mạng:
+Test bằng cách gửi gói tin qua lại
+
+Bước 5: Viết báo cáo
+Mô tả sơ đồ mạng: Giải thích chi tiết về sơ đồ đã thiết kế, các thiết bị sử dụng và cách chúng được kết nối. 
+(viết docs giải thích ngắn gọn tại sao phải thiết kế như thế)
+Giải thích cấu hình: Cung cấp chi tiết về cách đã cấu hình VLAN, bảo mật và kết nối WAN. 
+Đề xuất và khuyến nghị: Nêu các khuyến nghị về việc mở rộng hoặc nâng cấp mạng trong tương lai. (Search)
