@@ -1,0 +1,18 @@
+1. Mô tả Đề Tài & Các Bước Thực Hiện
+Mục tiêu: Xây dựng một hệ thống quản lý lỗ hổng Published CVE 
+với khả năng thông báo tự động cho quản trị viên khi phát hiện lỗ hổng.
+
+2. Yêu Cầu Hệ Thống & Công Cụ
+Ngôn ngữ & Framework:
+Python: Dùng để xây dựng backend, thu thập và phân tích dữ liệu CVE.
+Django: Framework web giúp xây dựng hệ thống quản lý lỗ hổng.
+Kali Linux: Hệ điều hành để kiểm tra bảo mật và mô phỏng khai thác lỗ hổng.
+CSDL: SQLite hoặc PostgreSQL. (Local window nên dùng luôn SQLite)
+
+Cài máy ảo hoặc m dùng VPS t cấp tấn công vào máy window của m
+Hoặc m dùng máy window hoặc máy ảo linux (cài bằng VMWare tấn công vào VPS) - VPS nó bảo mật thì m vào mở port ra cho dễ attack :))
+Hoặc chỉ dùng Linux vừa demo web và vừa tấn công 
+
+CVE thì lên youtube search vài cái CVE của window hoặc web mà tấn công 
+Linux tool thì sử dụng Nmap, Metasploit, Hydra để tấn công  
+
