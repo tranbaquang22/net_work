@@ -1,0 +1,23 @@
+Torrent 
+
+Torrent là một file chứa chi tiết dữ liệu nguồn nơi tìm thấy các file và thư mục phân tán trên Internet. 
+Torrent thường chứa thông tin liên quan đến danh sách các trình theo dõi (tracker) như các máy chủ liệt kê, thư mục trực tuyến,… 
+
+
+Một số thuật ngữ trong Torrent:
+Peers: Những người dùng tham gia chia sẻ tệp thông qua chia sẻ Peer-to-Peer bằng Torrent
+
+Seeders: Người dùng đang tải xuống một tệp từ Torrent và đồng thời tải lên cho những người khác sử dụng.
+
+Leechers: Những người dùng tải xuống một tệp tin từ Torrent nhưng lại dừng tải Torrent ngay khi đã tải xong,
+khiến cho việc tải xuống tệp tin của những người dùng khác bị hạn chế hoặc dừng hẳn.
+
+Indexers: Những trang web cho phép bạn tìm kiếm và lấy tệp Torrent để tải xuống.
+
+Trackers: Máy chủ kết nối các người dùng lại với nhau cũng như tìm kiếm các peers khác để tải tệp tin nhanh hơn.
+
+Swarms: Một lượng người dùng cùng tải lên hoặc tải xuống một tệp Torrent.
+
+BitTorrent Client: Máy khách cho phép bạn xử lý Torrent, quản lý tải xuống, 
+lắp ghép các đoạn của 1 tệp được tải lên bởi các seeders. 
+Một trong những BitTorrent Client phổ biến nhất hiện nay là µTorrent.

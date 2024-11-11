@@ -2,6 +2,50 @@ Bài 1:
 sử dụng thư viện concurrency, socket, threading, http.server 
 
 
+Tracker Server: 
+Giữ danh sách các client đã kết nối () và thông tin về các mảnh (piece) tệp mã mỗi client có 
+(Một file lớn được chia ra thành nhiều mảnh, khi cần tải sẽ tải đồng thời (threading) 
+các mảnh về và ghép lại thành tệp, việc ghép lại chưa cần làm)
+
+Xử lý các yêu cầu từ client để chỉ định nguồn tệp từ các peer khác 
+
+
+Client: 
+Thông báo cho máy chủ thông tin về các tệp có sẵn trong kho lưu trữ của mình 
+Gửi yêu cầu đến máy chủ khi cần tải tệp từ các client khác 
+Xử lý đa luồng để tải dữ liệu từ nhiều client đồng thời 
+
+
+Xây dựng tracker server như sau:
+Cho phép 100 client kết nối (listen(100))
+Tệp lưu thông tin có đuôi .torrent có thể là info.torrent, ....
+Lắng nghe kết nối (khi client kết nối đến gửi thông tin client đó, tracker_id (cái này có thể gán cho nó dạng int auto tăng) IP và port và thông tin về mảnh lưu trữ)
+Có thể gửi đến theo định dạng: piece.txt (Server sẽ lưu lại thông tin dạng IP, port, piece.txt)
+Server trả về danh sách các piece được lưu thông tin từ server về client (để client có thể chọn tải hoặc không)
+
+Server xử lý request đến:
+down piece_n.txt  : server tìm piece và trả về client nào đang giữ mảnh về cho client (xử lý cả trường hợp piece được yêu cầu có sẵn trên client
+, thì đưa ra message có sẵn rồi)
+up piece_n.txt : server kiểm tra xem mảnh đó có lưu thông tin hay chưa? nếu chưa thì lưu thông tin, nếu có rồi thì gửi message về client 
+n là số thứ tử mảnh
+
+Client: Cũng đóng vai trò là server lắng nghe (tối đa 50 connect listen(50))
+mỗi client có một folder lưu trữ riêng bằng cách khi kết nối đến server sẽ tạo một folder dạng IP_PORT
+client theo dõi folder, nếu tệp thêm vào folder thì gửi thông báo đến server: up piece_n.txt n là số thứ tự mảnh 
+client cần tải một file về  gửi yêu cầu đến server tracker để lấy thông tin về client đang giữ file (IP)
+client gửi yêu cầu đến client khác thông qua IP và connect đến để tải file về folder, sau khi tải xong thì disconnect 
+
+Giao diện: sử dụng tkinter, nên dùng ttk của tkinter cho UI đẹp hơn 
+Trên server có một cái dạng log (log http hoặc log các request của người dùng hiển thị lên (có thể hiển thị lên textbox và không cho edit))
+Một phần view khác xem thông tin file torrent 
+
+Giao diện client: 
+có thể upload và download, tìm kiếm file và download
+Tìm kiếm file gửi đến server nếu có server trả về thông tin, nếu không trả về message hiển thị lên client 
+Client cũng có log về phần các client khác connect, tải file và disconnect hiển thị lên messagebox (textbox gì đó dell nhớ :)))
+
+
+Toàn bộ code chỉ là sample m tự tạo code của riêng m
 
 
 Bài 2:

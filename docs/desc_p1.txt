@@ -1,0 +1,61 @@
+Mô tả Tổng Quan Bài 1
+xây dựng một ứng dụng mạng để chia sẻ tệp giữa các máy tính (client) 
+mà không cần lưu trữ dữ liệu trên một máy chủ trung tâm. Thay vào đó, 
+máy chủ (tracker server) sẽ giữ danh sách các client và thông tin về các mảnh (pieces) của tệp mà mỗi client có sẵn.
+
+Cách hoạt động:
+
+Khi một client có tệp để chia sẻ, nó sẽ thông báo cho máy chủ (tracker server) rằng nó có các mảnh tệp này.
+Khi một client khác muốn tải về tệp, nó sẽ hỏi máy chủ xem client nào có các mảnh mà nó cần.
+Sau đó, client sẽ tải các mảnh từ các client khác, thay vì từ máy chủ.
+Ví dụ Cụ Thể
+Giả sử bạn có một tệp lớn được chia thành 3 mảnh (pieces): 
+Piece 1, Piece 2, và Piece 3. Có 3 client (Client A, B, và C) tham gia vào hệ thống.
+
+Ban đầu:
+Client A có Piece 1.
+Client B có Piece 2.
+Client C có Piece 3.
+Máy chủ (tracker server) lưu trữ thông tin như sau:
+Piece 1 có ở Client A (IP)
+Piece 2 có ở Client B
+Piece 3 có ở Client C
+Khi Client D tham gia và muốn tải về tệp hoàn chỉnh:
+
+Client D sẽ gửi yêu cầu đến máy chủ (tracker server) để hỏi xem các mảnh của tệp nằm ở đâu.
+Máy chủ sẽ trả lời:
+Piece 1 có ở Client A
+Piece 2 có ở Client B
+Piece 3 có ở Client C
+Client D sẽ bắt đầu tải Piece 1 từ Client A, Piece 2 từ Client B, và Piece 3 từ Client C.
+Quá trình tải về có thể diễn ra đồng thời bằng cách sử dụng đa luồng (multithreading) để tăng tốc độ.
+Sau khi Client D tải xong các mảnh:
+
+Client D cũng trở thành một phần của hệ thống và có thể chia sẻ các mảnh tệp với những client khác trong tương lai.
+Hệ thống gồm 3 thành phần chính:
+Tracker Server:
+
+Giữ danh sách các client và thông tin về các mảnh tệp mà mỗi client có.
+Không lưu trữ dữ liệu tệp mà chỉ đóng vai trò định tuyến.
+Client:
+Có thể tải lên hoặc tải xuống các mảnh tệp.
+Thông báo cho máy chủ về các mảnh tệp mà nó có.
+Yêu cầu máy chủ để tìm kiếm các mảnh mà nó cần.
+Đa luồng (Multithreading):
+Khi một client tải tệp, nó có thể tải nhiều mảnh từ nhiều client khác cùng một lúc để tăng tốc độ tải về.
+
+Hình dung đơn giản
+Hãy tưởng tượng bạn và bạn bè đang chia sẻ các phần của một bộ phim:
+
+Người A có phần đầu, Người B có phần giữa, và Người C có phần cuối.
+Nếu bạn muốn có toàn bộ bộ phim, bạn sẽ cần lấy phần đầu từ Người A, phần giữa từ Người B, 
+và phần cuối từ Người C, thay vì lấy tất cả từ một người duy nhất.
+Hệ thống đa luồng giúp bạn có thể lấy các phần phim này từ tất cả mọi người cùng một lúc. 
+
+Tóm lại
+Máy chủ (tracker server): Chỉ giữ thông tin về ai có mảnh nào.
+Client: Tải xuống các mảnh từ nhau thay vì từ máy chủ.
+Đa luồng: Tải về nhiều mảnh đồng thời để tiết kiệm thời gian. 
+
+
+Không cần dùng FTP để  tải file 
