@@ -47,7 +47,7 @@ Client cũng có log về phần các client khác connect, tải file và disco
 
 Toàn bộ code chỉ là sample m tự tạo code của riêng m 
 
-Demo code thì cần có 2 client thì server của client đổi port khác nhau đi nhé
+Demo code thì cần có 2 client thì server của client đổi port khác nhau đi nhé 
 
 
 Bài 2:
