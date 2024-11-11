@@ -17,4 +17,7 @@ https://www.connectwise.com/resources/cve-spotlight-nagios-xi-cve-2021-25296-252
 
 
 https://github.com/projectdiscovery/nuclei-templates/blob/main/http/cves/2021/CVE-2021-25296.yaml 
-Github có hd
+Github có hd 
+
+
+https://github.com/projectdiscovery
