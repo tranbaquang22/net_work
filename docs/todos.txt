@@ -42,12 +42,7 @@ Một phần view khác xem thông tin file torrent
 Giao diện client: 
 có thể upload và download, tìm kiếm file và download
 Tìm kiếm file gửi đến server nếu có server trả về thông tin, nếu không trả về message hiển thị lên client 
-Client cũng có log về phần các client khác connect, tải file và disconnect hiển thị lên messagebox (textbox gì đó dell nhớ :)))
-
-
-Toàn bộ code chỉ là sample m tự tạo code của riêng m 
-
-Demo code thì cần có 2 client thì server của client đổi port khác nhau đi nhé 
+Client cũng có log về phần các client khác connect, tải file và disconnect hiển thị lên messagebox
 
 
 Bài 2:

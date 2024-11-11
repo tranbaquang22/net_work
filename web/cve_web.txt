@@ -1,4 +1,0 @@
-Tạo trang web có chứa danh sách cve, 
-tạo 1 server có cài openvas và quét hệ thống có cài project chứa cve 
-khi detech được cve thì trả về cho quản trị viên và lấy thông tin đưa ra solutions. 
-Ngoài ra chọn 1-2 cve tiêu biểu để demo tấn công và cách fix 
